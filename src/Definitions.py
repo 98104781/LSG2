@@ -1,6 +1,6 @@
 Charge_Opts = {
 
-    'POS':  True,  
+    'POS':  False,  
     'NEG':  True}
 
 Masses = {
@@ -34,12 +34,12 @@ Masses = {
     "H2O":         
     18.010565}
 
-Chain_parameters = [4, 6, 0, 1]
+Chain_parameters = [16, 20, 0, 4]
 
 classes = { # Structural and spectra information defined here.
     
     'MAG':                                          # Class
-     [True,                                        # [Generate/Don't generate,
+     [False,                                        # [Generate/Don't generate,
      [1, 'Glycerol', None],                         # [# of tails, Body type ('Glycerol' for glycerolipids or 'SB' for sphingolipids), Headgroup mass (None if no headgroup)]]
      {"[M+H]+":     [['MA', 'MA_sub_H2O', 'FFAk'],  # { Adduct:   [[Types of fragments to generate],
                      [100, 50, 50]],                #              [Intensities of fragment]] }                        
@@ -51,7 +51,7 @@ classes = { # Structural and spectra information defined here.
                      [100, 100, 50, 50]]}], 
                                                     
     'DAG':                                          ##### Metabolites 2016, 6(3), 25; https://doi.org/10.3390/metabo6030025
-     [True,                                        ##### J Am Soc Mass Spectrom. 2010 April ; 21(4): 657–669. https://doi.org/10.1016/j.jasms.2010.01.007
+     [False,                                        ##### J Am Soc Mass Spectrom. 2010 April ; 21(4): 657–669. https://doi.org/10.1016/j.jasms.2010.01.007
      [2, 'Glycerol', None],           
      {"[M+H]+":     [['MA', 'MH_sub_H2O', 'FFAk', 'MH_sub_FA'],
                      [25, 100, 1, 25]],
@@ -63,7 +63,7 @@ classes = { # Structural and spectra information defined here.
                      [25, 10, 100, 1, 25]]}],
 
     'TAG':                 
-     [True, 
+     [False, 
      [3, 'Glycerol', None],           
      {"[M+Na]+":   [['MA', 'MH_sub_FA', 'MA_sub_FA', 'FFAk', 'FFAkA'], 
                     [25, 100, 10, 10, 5]],
@@ -71,7 +71,7 @@ classes = { # Structural and spectra information defined here.
                     [25, 100, 10]]}],
 
     'PA':                  
-     [True, 
+     [False, 
      [2, 'Glycerol', 97.976895],           
      {"[M-H]-":    [['MA', 'gPA', 'FFA', 'MH_sub_FA', 'MH_sub_FAk'],
                     [25, 0, 100, 15, 5]],
@@ -81,7 +81,7 @@ classes = { # Structural and spectra information defined here.
                     [25, 0, 4]]}],
 
     'Lyso PA':      
-     [True, 
+     [False, 
      [1, 'Glycerol', 97.976895],           
      {"[M-H]-":    [['MA', 'gPA', 'FFA', 'MH_sub_FA', 'MH_sub_FAk'],
                     [25, 0, 100, 15, 5]],
@@ -91,7 +91,7 @@ classes = { # Structural and spectra information defined here.
                     [25, 0, 4]]}],
 
     'PC':                  
-     [True, 
+     [False, 
      [2, 'Glycerol', 183.066044], # headgroup mass has -H to maintain neutral charge              
      {"[M+H]+":    [['MA', 'gPC', 'MH_sub_FA', 'MH_sub_FAk', 'FFAk'],
                     [25, 0, 4, 8, 4]],
@@ -99,7 +99,7 @@ classes = { # Structural and spectra information defined here.
                     [25, 0, 4, 8, 4]]}],
 
     'Lyso PC':             
-     [True, 
+     [False, 
      [1, 'Glycerol', 183.066044], # headgroup mass has -H to maintain neutral charge              
      {"[M+H]+":    [['MA', 'gPC', 'MH_sub_FA', 'MH_sub_FAk', 'FFAk'],
                     [25, 0, 4, 8, 4]],
@@ -107,7 +107,7 @@ classes = { # Structural and spectra information defined here.
                     [25, 0, 4, 8, 4]]}],
 
     'PE':                  
-     [True, 
+     [False, 
      [2, 'Glycerol', 141.019094],           
      {"[M-H]-":    [['MA', 'gPE', 'FFA', 'MH_sub_FA', 'MH_sub_FAk'],
                    [25, 0, 100, 15, 5]],
@@ -117,7 +117,7 @@ classes = { # Structural and spectra information defined here.
                    [25, 0, 4]]}],
 
     'Lyso PE':             
-     [True, 
+     [False, 
      [1, 'Glycerol', 141.019094],           
      {"[M-H]-":    [['MA', 'gPE', 'FFA', 'MH_sub_FA', 'MH_sub_FAk'],
                    [25, 0, 100, 15, 5]],
@@ -127,7 +127,7 @@ classes = { # Structural and spectra information defined here.
                    [25, 0, 4]]}],
 
     'PG':                  
-     [True, 
+     [False, 
      [2, 'Glycerol', 172.013674],           
      {"[M-H]-":   [['MA', 'gPG', 'FFA', 'MH_sub_FA', 'MH_sub_FAk'],
                    [25, 0, 100, 15, 5]],
@@ -137,20 +137,20 @@ classes = { # Structural and spectra information defined here.
                    [25, 0, 4]]}],
 
     'Lyso PG':             
-     [True, 
+     [False, 
      [1, 'Glycerol', 172.013674],           
      {"[M-H]-":   [['MA', 'gPG', 'FFA', 'MH_sub_FA', 'MH_sub_FAk'],
                    [25, 0, 100, 15, 5]],
       "[M+H]+":   [['MA', 'gPG', 'FFAk'],
                    [25, 0, 4]],
       "[M+Na]+":  [['MA', 'gPG', 'FFAkA'],
-                   [25, 0, 4]]}],                                   # Perhaps I should add PGly ?
+                   [25, 0, 4]]}],                                           # Perhaps I should add PGly ?
                                                     
-    'PI':                  
-     [False, 
+    'PI':                                                                   # https://doi.org/10.1016/S1044-0305(00)00172-0
+     [True, 
      [2, 'Glycerol', 260.029718],           
-     {"[M-H]-":   [[],
-                   []]}],
+     {"[M-H]-":   [['MA', 'gPI', 'FFA', 'MH_sub_FA', 'MH_sub_FAk'],
+                   [25, 0, 100, 15, 5]]}],
 
     'Lyso PI':             
      [False, 
@@ -159,10 +159,12 @@ classes = { # Structural and spectra information defined here.
                    []]}],
 
     'PIP':                 
-     [False, 
+     [True, 
      [2, 'Glycerol', 339.996048],          
-     {"[M-H]-":[],
-      "[M-2H]2-":[]}],
+     {"[M-H]-":[['MA' , 'MH_sub_H2O', 'M2H', 'gPIP', 'FFA', 'MH_sub_FA_H2O', 'MH_sub_FA', 'MH_sub_FAk'],
+                [25, 10, 5, 0, 100, 15, 15, 5]],
+      "[M-2H]2-":[[],
+                  []]}],
 
     'PIP2':                
      [False, 
